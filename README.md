@@ -8,6 +8,12 @@ When you run it, all schema information and data will be synchronized.
 
 If you want to add options, write options in yaml files.
 
+## Install
+
+```
+go get github.com/yuta17/gobulk
+```
+
 ## Usage
 
 ```go
