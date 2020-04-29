@@ -4,7 +4,7 @@ gobulk is a tool to DB replication.
 
 This tool can be used to create database for data analysis, staging environment.
 
-When you run it, all schema information and data will be synchronized.
+When you run it, all schema information and data will be synced.
 
 If you want to add options, write options in yaml files.
 
@@ -14,24 +14,13 @@ If you want to add options, write options in yaml files.
 go get github.com/yuta17/gobulk
 ```
 
-## Usage
+## Examples
 
-```go
-inputUrl := `YOUR INPUT DB URL`
-outputUrl := `YOUR OUTPUT DB URL`
-columnOptions := ioutil.ReadFile("./tables/table1.yml")
+[example](https://github.com/yuta17/gobulk/blob/master/example/main.go)
 
-client := gobulk.NewClient(inputUrl, outputUrl)
-client.SetColumnOptions(columnOptions)
-client.Sync()
-```
+## Todo
 
-
-```yml
-# ./tables/table1.yml
-table:
-  name: table1
-  masking_columns:
-    - column1
-    - column2
-```
+- [x] Sync data from input database to output database.
+- [ ] Masking data in specified column.
+- [ ] Automatically follow column changes of input database.
+- [ ] Support multiple DBMS client.
