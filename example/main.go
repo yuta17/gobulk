@@ -8,7 +8,7 @@ import (
 func main() {
 	inputURL := "root@tcp(127.0.0.1:3306)/YOUR_INPUT_DATABASE_NAME"
 	outputURL := "root@tcp(127.0.0.1:3306)/YOUR_OUTPUT_DATABASE_NAME"
-	client, err := gobulk.NewClient("mysql", inputURL, outputURL)
+	client, err := gobulk.NewClient("mysql", "mysql", inputURL, outputURL)
 	if err != nil {
 		log.Errorln(err)
 	}

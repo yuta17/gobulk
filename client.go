@@ -27,12 +27,12 @@ type Column struct {
 }
 
 // NewClient .
-func NewClient(DbmsName, InputURL, OutputURL string) (*Client, error) {
-	inputDb, err := inputDB(DbmsName, InputURL)
+func NewClient(InputDbmsName, OutputDbmsName, InputURL, OutputURL string) (*Client, error) {
+	inputDb, err := inputDB(InputDbmsName, InputURL)
 	if err != nil {
 		return nil, err
 	}
-	outputDb, err := outputDB(DbmsName, OutputURL)
+	outputDb, err := outputDB(OutputDbmsName, OutputURL)
 	if err != nil {
 		return nil, err
 	}
